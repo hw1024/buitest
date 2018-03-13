@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>BUI</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/bui.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <!-- 依赖库 手机调试的js引用顺序如下 -->
+    <script src="js/zepto.js"></script>
+    <script src="js/plugins/fastclick.js"></script>
+    <!-- BUI库 -->
+    <script src="js/bui.js"></script>
+    <script src="js/app/_config.js"></script>
+    <script>
+        bui.ready(function() {
+            
+           var uiDialog = bui.dialog({
+                   id: "#uiDialog"
+               });    
+
+          $("#btnGet").on("click",function () {
+            uiDialog.open();
+          })          
+        })
+    </script>
+</head>
+
+<body>
+    <div id="view" class="bui-page">
+        <main>
+          <div class="view-title">
+            <!-- score-level01 - score-level06 代表不同的分数的表情 -->
+            <div class="score-level score-level04">
+                <div class="score-level-image"></div>
+                <div class="score-level-number"></div>
+                <!-- 每个等级的描述写在css里 -->
+                <div class="score-level-detail"></div>
+                <div class="tips">获得10元【一键叫车】现金券</div>
+            </div>
+          </div>
+          <div class="getit">
+            <input type="phone" class="input-large" placeholder="输入手机号码" />
+            <div id="btnGet" class="btn btn-get">立即领取</div>
+          </div>
+
+          <div class="juanzi">
+            <div class="juanzi-title">
+              <img src="images/juanzi.png" alt="">
+            </div>
+            <div class="juanzi-subjects">
+              <!-- 第一道题 -->
+              <div class="juanzi-subject">
+                一、“王其德之用，祈天永命”出自于（）
+              </div>
+              <div class="juanzi-option">
+                <div class="juanzi-option-item">A.《中庸》</div>
+                <div class="juanzi-option-item">B.《道德经》</div>
+                <!-- active: 当前选择 wrong right 代表是否正确 -->
+                <div class="juanzi-option-item active wrong">B.《道德经》我是很长的答案，书中自有颜
+如玉黄金屋</div>
+                <div class="juanzi-option-item right">D.《尚书》</div>
+              </div>
+              <!-- 第二道题 -->
+              <div class="juanzi-subject">
+                一、“王其德之用，祈天永命”出自于（）
+              </div>
+              <div class="juanzi-option">
+                <div class="juanzi-option-item">A.《中庸》</div>
+                <div class="juanzi-option-item">B.《道德经》</div>
+                <!-- active: 当前选择 wrong right 代表是否正确 -->
+                <div class="juanzi-option-item active wrong">B.《道德经》我是很长的答案，书中自有颜
+如玉黄金屋</div>
+                <div class="juanzi-option-item right">D.《尚书》</div>
+              </div>
+            </div>
+          </div>
+        </main>
+    </div>
+    
+    <!-- 弹出提醒 -->
+    <div id="uiDialog" class="bui-dialog markdialog" style="display: none;">
+        <div class="bui-dialog-main">
+          <div class="mark">
+            <div class="mark-img">
+              <img src="images/redbag.png" alt="红包">
+            </div>
+            <p>恭喜您，成功领取<strong>10元</strong></p>
+            <p>尽情体验一键叫车吧</p>
+
+            <div class="tips">
+              查看地址：<a href="http://veni.bingosoft.com">http://veni.bingosoft.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="bui-dialog-close"><i class="icon"><img src="images/icons/iconfont-guanbi.png" alt=""></i></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../css/bui.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <!-- 依赖库 手机调试的js引用顺序如下 -->
+    <script src="../js/zepto.js"></script>
+    <!-- 原生库 -->
+    <!-- <script src="../js/cordova.js"></script> -->
+    <!-- <script src="../js/bingotouch.js"></script> -->
+    <!-- 移动端快速点击插件 -->
+    <script src="../js/plugins/fastclick.js"></script>
+    <!-- BUI库 -->
+    <script src="../js/bui.js"></script>
+    <!-- 应用的相关配置 -->
+    <script src="../js/app/_config.js"></script>
+    <title>忘记密码</title>
+</head>
+
+<body>
+    <div class="bui-page forget">
+        <header class="bui-bar">
+            <div class="bui-bar-left" onclick="bui.back();">
+                <a onclick="bui.back()" class="bui-btn">
+                    <i class="icon-back"></i>
+                </a>
+            </div>
+            <div class="bui-bar-main">忘记密码</div>
+            <div class="bui-bar-right"></div>
+        </header>
+        <main>
+            <div id="step" class="step-box"></div>
+            <div class="bui-list">
+                <div class="bui-btn bui-box clearactive">
+                    <div class="bui-label">手机号</div>
+                    <div class="span1">
+                        <input type="text" class="bui-input" value="" placeholder="请输入手机号码">
+                    </div>
+                </div>
+                <div class="bui-btn bui-box vertical-box clearactive">
+                    <div class="bui-label">验证码</div>
+                    <div class="span1">
+                        <input type="text" maxlength="4" class="bui-input" value="" placeholder="">
+                    </div>
+                    <div class="span1">
+                        <div class="bui-btn round vertical-btn">发送验证码</div>
+                    </div>
+                </div>
+            <div class="container-xy">
+                <div class="bui-btn round success" href="reset.html" id="submit">提交</div>
+            </div>
+        </main>
+        <footer></footer>
+    </div>
+</body>
+<script src="../js/app/rStepBar.js"></script>
+<script type="text/javascript">
+bui.ready(function(viewport) {
+
+    var option = {
+        id: "#step",
+        data: ["身份验证", "重置密码", "完成"]
+    }
+
+    var stepBar = new rStepbar(option);
+    stepBar.value(0);
+    bui.btn({id:"#submit",handle:".success"}).load();
+})
+</script>
+
+</html>

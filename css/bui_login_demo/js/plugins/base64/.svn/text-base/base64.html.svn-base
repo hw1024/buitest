@@ -1,0 +1,41 @@
+<html>
+<head>
+<META HTTP-EQUIV="MSThemeCompatible" CONTENT="Yes">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Base64 Encode and Decode</title>
+<style>
+</style>
+<script type="text/javascript" src="base64.js"></script>
+<script type="text/javascript" language="javascript">
+
+function doEncode() {
+    var src = document.getElementById('src').value;
+    document.getElementById('dest').value = base64.encode(src);
+}
+
+function doDecode() {
+    var src = document.getElementById('src').value;
+
+    document.getElementById('dest').value = base64.decode(src);
+}
+
+
+</script>
+</head>
+
+<BODY bgcolor="#EAF0F8" topmargin="10" leftmargin="10" rightmargin="10" bottommargin="10">
+<div id="contain" style="font-family: Tahoma, Arial; font-size:11pt">
+  <div id="mainbg">
+    <div style="color: #000080; margin-bottom: 10"><b>Base64 Encode / Decode</b></div>
+    <div>
+      <textarea id="src" rows=11 cols=60 value="" name="src"></textarea>
+      <div style="margin: 10 0 10 0">
+      <input onclick="doEncode();" type=button value="Encode" name="encode">&nbsp;
+      <input onclick="doDecode();" type=button value="Decode" name="decode">&nbsp;
+      </div>
+      <textarea id="dest" rows=11 cols=60 value="" name="dest"></textarea>
+    </div>
+    </div>
+</div>
+</BODY>
+</html>

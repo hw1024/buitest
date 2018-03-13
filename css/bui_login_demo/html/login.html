@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../css/bui.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <!-- 依赖库 手机调试的js引用顺序如下 -->
+    <script src="../js/zepto.js"></script>
+    <!-- 移动端快速点击插件 -->
+    <script src="../js/plugins/fastclick.js"></script>
+    <!-- BUI库 -->
+    <script src="../js/bui.js"></script>
+    <!-- 应用的相关配置 -->
+    <script src="../js/app/_config.js"></script>
+    <script type="text/javascript">
+        
+        bui.ready(function(viewport){
+            
+        });
+
+    </script>
+    <title>登录</title>
+</head>
+
+<body>
+    <div class="bui-page login">
+        <header class="bui-bar">
+            <div class="bui-bar-left"></div>
+            <div class="bui-bar-main">登录</div>
+            <div class="bui-bar-right"></div>
+        </header>
+        <main>
+            <div class="bui-list">
+                <div class="bui-btn bui-box clearactive">
+                    <div class="bui-label">账户</div>
+                    <div class="span1">
+                        <input type="text" class="bui-input" value="" placeholder="邮箱/手机号码/昵称">
+                    </div>
+                </div>
+                <div class="bui-btn bui-box clearactive">
+                    <div class="bui-label">密码</div>
+                    <div class="span1">
+                        <input type="password" class="bui-input" value="" placeholder="密码">
+                    </div>
+                </div>
+                <div class="bui-btn bui-box code-box clearactive">
+                    <div class="bui-label">验证码</div>
+                    <div class="span1">
+                        <input type="text" class="bui-input" value="" placeholder="" maxlength="4">
+                    </div>
+                    <div class="code-img">
+                        <img src="../images/code.png">
+                    </div>
+                </div>
+                <div class="bui-btn bui-box status">
+                     <input type="checkbox" class="bui-choose remind">
+                     <div class="span1">记住登录状态</div>
+                </div>
+            </div>
+            <div class="container-xy">
+                <div class="bui-btn round success" id="login">立即登录</div>
+            </div>
+            <div class="bui-box-align-justify quick-link">
+               <a class="bui-btn no-border"  href="forget.html" >忘记密码？</a>
+               <a class="bui-btn no-border"  href="register.html" >快速注册</a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

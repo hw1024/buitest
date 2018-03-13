@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../css/bui.css">
+    <!-- 依赖库 手机调试的js引用顺序如下 -->
+    <script src="../js/zepto.js"></script>
+    <!-- 原生库 -->
+    <!-- <script src="../js/cordova.js"></script> -->
+    <!-- <script src="../js/bingotouch.js"></script> -->
+    <!-- 移动端快速点击插件 -->
+    <script src="../js/plugins/fastclick.js"></script>
+    <!-- BUI库 -->
+    <script src="../js/bui.js"></script>
+    <!-- 应用的相关配置 -->
+    <script src="../js/app/_config.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <title>注册</title>
+</head>
+
+<body>
+    <div class="bui-page register">
+        <header class="bui-bar">
+            <div class="bui-bar-left"></div>
+            <div class="bui-bar-main">注册</div>
+            <div class="bui-bar-right"></div>
+        </header>
+        <main>
+            <div class="bui-list">
+                <div class="bui-btn bui-box clearactive">
+                    <div class="bui-label">国家地区</div>
+                    <div class="span1">
+                        <div id="country_select" class="bui-select">中国</div>
+                    </div>
+                </div>
+                <div class="bui-btn bui-box clearactive">
+                    <div class="bui-label">地市</div>
+                    <div class="span1">
+                        <div id="province_select" class="bui-select">请选择省份</div>
+                    </div>
+                    <div class="span1">
+                        <div id="city_select" class="bui-select">请选择城市</div>
+                    </div>
+                </div>
+                <div class="bui-btn bui-box clearactive">
+                    <div class="bui-label">+86</div>
+                    <div class="span1">
+                        <input type="text" class="bui-input" value="" placeholder="移动电话">
+                    </div>
+                </div>
+                <div class="bui-btn bui-box clearactive">
+                    <div class="bui-label">密码</div>
+                    <div class="span1">
+                        <div class="bui-input">
+                            <input type="password" value="" placeholder="设置8-16位密码">
+                            <i class="icon_eye"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="bui-btn bui-box tip-box">
+                    <div class="bui-label"></div>
+                    <div class="span1">
+                        <div class="bui-fluid">
+                            <div class="span4 p-strength">
+                                <div class="bui-box-space">
+                                    <div class="span3">
+                                        <div class="bui-btn danger">低</div>
+                                    </div>
+                                    <div class="span3">
+                                        <div class="bui-btn warning">中</div>
+                                    </div>
+                                    <div class="span3">
+                                        <div class="bui-btn success">高</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span8 tip-text">
+                                    <i class="icon_infofill"></i> 密码由数字、字母、特殊符号组成
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span1 tip-wran-text" style="display: none;">
+                        <i class="icon_infofill"></i> 输入密码格式不正确，请重新输入
+                    </div>
+                </div>
+                <div class="bui-btn bui-box vertical-box clearactive">
+                    <div class="bui-label">短信验证码</div>
+                    <div class="span1">
+                        <input type="text" maxlength="4" class="bui-input" value="" placeholder="">
+                    </div>
+                    <div class="span1">
+                        <div class="bui-btn round vertical-btn">获取短信验证码</div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-xy">
+                <div class="bui-btn round success" id="regisiter">立即注册</div>
+            </div>
+        </main>
+        <footer></footer>
+    </div>
+</body>
+<script type="text/javascript" src="../js/app/register.js"></script>
+<script type="text/javascript">
+
+
+</script>
+
+</html>

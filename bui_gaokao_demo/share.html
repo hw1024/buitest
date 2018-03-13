@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>BUI</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/bui.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <!-- 依赖库 手机调试的js引用顺序如下 -->
+    <script src="js/zepto.js"></script>
+    <script src="js/plugins/fastclick.js"></script>
+    <!-- BUI库 -->
+    <script src="js/bui.js"></script>
+    <script src="js/app/_config.js"></script>
+    <script>
+        bui.ready(function() {
+            
+            // 广告窗口
+           var uiDialog = bui.dialog({
+                   id: "#uiDialog"
+               });    
+
+          // 
+          $(".ad").on("click",function () {
+            uiDialog.open();
+          })  
+
+          // 页面跳转到考试页面 
+          $("#btnGo").on("click",function () {
+            bui.load({
+              url: "index.html"
+            })
+          })         
+        })
+    </script>
+</head>
+
+<body>
+    <div id="view" class="bui-page">
+        <main>
+          <div class="view-title">
+            <!-- score-level01 - score-level06 代表不同的分数的表情 -->
+            <div class="score-level score-level04">
+                <div class="score-level-image"></div>
+                <div class="score-level-number"></div>
+                <!-- 每个等级的描述写在css里 -->
+                <div class="score-level-detail"></div>
+                <div class="tips">Eva 获得10元【一键叫车】现金券</div>
+            </div>
+          </div>
+          <div class="getit">
+            <div id="btnGo" class="btn btn-go">我也来考考</div>
+            <div class="ad">
+              <img src="images/blackboard.png" alt="打开一键叫车对话框">
+            </div>
+          </div>
+
+          <div class="juanzi">
+            <div class="juanzi-title">
+              <img src="images/juanzi-title.png" alt="">
+            </div>
+            <div class="juanzi-subjects">
+              <!-- 第一道题 -->
+              <div class="juanzi-subject">
+                一、“王其德之用，祈天永命”出自于（）
+              </div>
+              <div class="juanzi-option">
+                <div class="juanzi-option-item">A.《中庸》</div>
+                <div class="juanzi-option-item">B.《道德经》</div>
+                <!-- active: 当前选择 wrong right 代表是否正确 -->
+                <div class="juanzi-option-item active wrong">B.《道德经》我是很长的答案，书中自有颜
+如玉黄金屋</div>
+                <div class="juanzi-option-item right">D.《尚书》</div>
+              </div>
+              <!-- 第二道题 -->
+              <div class="juanzi-subject">
+                一、“王其德之用，祈天永命”出自于（）
+              </div>
+              <div class="juanzi-option">
+                <div class="juanzi-option-item">A.《中庸》</div>
+                <div class="juanzi-option-item">B.《道德经》</div>
+                <!-- active: 当前选择 wrong right 代表是否正确 -->
+                <div class="juanzi-option-item active wrong">B.《道德经》我是很长的答案，书中自有颜
+如玉黄金屋</div>
+                <div class="juanzi-option-item right">D.《尚书》</div>
+              </div>
+            </div>
+          </div>
+        </main>
+    </div>
+    
+    <!-- 弹出提醒 -->
+    <div id="uiDialog" class="bui-dialog ad-dialog" style="display: none;">
+        <div class="bui-dialog-main">
+          <div class="ad-img">
+              <img src="images/ad-img.png" alt="广告">
+          </div>
+          <div class="ad-detail">
+            <div class="ad-logo">
+              <img src="images/ad-logo.png" alt="">
+            </div>
+            <p>出租车的价格，专车的服务</p>
+            <div class="tips">
+              点击下载体验：<a href="http://veni.bingosoft.com">http://veni.bingosoft.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="bui-dialog-close"><i class="icon"><img src="images/icons/icon-close.png" alt=""></i></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>BUI</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/bui.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <!-- 依赖库 手机调试的js引用顺序如下 -->
+    <script src="js/zepto.js"></script>
+    <script src="js/plugins/fastclick.js"></script>
+    <!-- BUI库 -->
+    <script src="js/bui.js"></script>
+    <script src="js/app/_config.js"></script>
+    <script>
+        // BUI 控件
+        var popupPage,
+            kaochangPage,
+            uiMask,
+            uiSlide;
+        bui.ready(function() {
+            // 初始化页面动画
+            popupPage = bui.animate("#popupPage");
+            kaochangPage = bui.animate("#kaochangPage");
+            kaochangPage.right("100%").start();
+            
+            // 提交分享的遮罩
+            uiMask = bui.mask();
+
+         // 焦点图 js 初始化:
+            uiSlide = bui.slide({
+                id:"#uiSlide",
+            });
+
+            // uiSlide.lock();
+            
+            // 绑定页面事件
+            bind()              
+        })
+
+        function bind(argument) {
+           // 点击跳转
+            $("#enter").on("click",function () {
+                popupPage.left("100%").start();
+                kaochangPage.stop().right(0).start();
+            })
+            
+            // 点击选项
+            $(".bui-check").on("click",function (argument) {
+                uiSlide.next();
+            })
+            // 点击选项
+            $("#btnSubmit").on("click",function (argument) {
+                uiMask.show();
+
+                $(".zhiyin").show();
+            })
+            // 查看答案
+            $(".zhiyin").on("click",function (argument) {
+                bui.load({
+                  url:"answer.html"
+                })
+            })
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="pages">
+        <div id="popupPage" class="bui-page popup-page">
+            
+            <div class="container">
+                <div id="title1" class="title-line1">
+                    <img src="images/title1.png" alt="">
+                </div>
+                <div id="title2" class="title-line2">
+                    <img src="images/title2.png" alt="">
+                </div>
+                <div id="title3" class="title-line3">
+                    <img src="images/title3.png" alt="">
+                </div>
+
+                <div class="count">
+                    <p><strong>30000</strong>人已参与</p>
+                    <p>集体穿越  寻找旧时光</p>
+                </div>
+
+                <div id="enter" class="btn btn-enter">立即进入考场</div>
+            </div>
+        </div>
+        <div id="kaochangPage" class="bui-page">
+            <header>
+                <img src="images/title6.png" alt="">
+            </header>
+            <main>
+                <div id="uiSlide" class="bui-slide">
+                  <div class="bui-slide-main">
+                    <ul>
+                        <!-- 第一道题, label 的for 属性要一一对应 -->
+                      <li>
+                        <div class="subject-item">
+                            <h3 class="subject">
+                                一、“王其德之用，祈天永命”出自于（）
+                            </h3>
+                            <div class="options">
+                                <div class="bui-check">
+                                  <input id="subject1Option1" type="radio" name="subject1">
+                                  <label for="subject1Option1">A.《中庸》</label>
+                                </div>
+                                <div class="bui-check">
+                                  <input id="subject1Option2" type="radio" name="subject1">
+                                  <label for="subject1Option2">B.《道德经》</label>
+                                </div>
+                                <div class="bui-check">
+                                  <input id="subject1Option3" type="radio" name="subject1">
+                                  <label for="subject1Option3">C.《礼记》</label>
+                                </div>
+                                <div class="bui-check">
+                                  <input id="subject1Option4" type="radio" name="subject1">
+                                  <label for="subject1Option4">D.《尚书》</label>
+                                </div>
+                            </div>
+                        </div>
+                      </li>
+                      <!-- 最后一道题 -->
+                      <li>
+                        <div class="subject-item">
+                            <h3 class="subject">
+                                二、“王其德之用，祈天永命”出自于（）
+                            </h3>
+                            <div class="options">
+                                <div class="bui-check">
+                                  <input id="subject2Option1" type="radio" name="subject2">
+                                  <label for="subject2Option1">A.《中庸》</label>
+                                </div>
+                                <div class="bui-check">
+                                  <input id="subject2Option2" type="radio" name="subject2">
+                                  <label for="subject2Option2">B.《道德经》</label>
+                                </div>
+                                <div class="bui-check">
+                                  <input id="subject2Option3" type="radio" name="subject2">
+                                  <label for="subject2Option3">C.《礼记》</label>
+                                </div>
+                                <div class="bui-check">
+                                  <input id="subject2Option4" type="radio" name="subject2">
+                                  <label for="subject2Option4">D.《尚书》</label>
+                                </div>
+                            </div>
+                            <div id="btnSubmit" class="btn btn-submit">向朋友们交卷</div>
+
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="bui-slide-head">
+                    <ul>
+                      <li>1</li>
+                      <li>2</li>
+                    </ul>
+                  </div>
+                </div>          
+            </main>
+        </div>
+    </div>
+    <!-- 指引的弹出 -->
+    <div class="zhiyin">
+        <img src="images/zhiyin.png" alt="">
+    </div>
+</body>
+
+</html>
